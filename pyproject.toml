@@ -1,7 +1,7 @@
 [project]
 name = "AA84-API"
 version = "0.1.0"
-description = "AA84 API application"
+description = "AA84 API"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi",
@@ -10,6 +10,8 @@ dependencies = [
     "python-multipart",
     "python-dotenv",
     "pydantic-settings",
+    "sqlalchemy",
+    "psycopg2-binary",
 ]
 
 [build-system]

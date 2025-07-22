@@ -1,0 +1,17 @@
+[project]
+name = "AA84-API"
+version = "0.1.0"
+description = "AA84 API application"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic[email]",
+    "python-multipart",
+    "python-dotenv",
+    "pydantic-settings",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -4,14 +4,23 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import api_router
 from app.core.config import settings
 from app.core.database import engine, Base
+from app.core.logging import setup_logging, get_logger
+from app.core.middleware import LoggingMiddleware
+
+# Initialize logging
+logger = setup_logging(
+    log_level=settings.LOG_LEVEL,
+    log_file=settings.LOG_FILE
+)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: Create database tables
+    logger.info("AA84 API startup - Creating database tables")
     Base.metadata.create_all(bind=engine)
     yield
     # Shutdown: Clean up resources if needed
-    pass
+    logger.info("AA84 API shutdown")
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -21,6 +30,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+app.add_middleware(LoggingMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.BACKEND_CORS_ORIGINS,

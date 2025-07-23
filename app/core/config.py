@@ -5,6 +5,10 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     BACKEND_CORS_ORIGINS: list[str] = ["http://localhost:3000", "http://localhost:8080"]
     
+    # Logging
+    LOG_LEVEL: str = "WARNING"
+    LOG_FILE: str = "logs/aa84_api.log"
+    
     # Database
     DB_HOST: str
     DB_PORT: int

@@ -71,3 +71,6 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+# Claude AI
+CLAUDE.md

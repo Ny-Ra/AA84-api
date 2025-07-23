@@ -74,3 +74,6 @@ logs/
 
 # Claude AI
 CLAUDE.md
+
+# uv
+uv.lock

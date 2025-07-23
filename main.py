@@ -6,6 +6,7 @@ from app.core.config import settings
 from app.core.database import engine, Base
 from app.core.logging import setup_logging, get_logger
 from app.core.middleware import LoggingMiddleware
+import app.models  # Import all models to register them with SQLAlchemy
 
 # Initialize logging
 logger = setup_logging(

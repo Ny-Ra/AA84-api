@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Optional
 
 def setup_logging(
-    log_level: str = "INFO",
+    log_level: str = "WARNING",
     log_file: Optional[str] = None,
     log_format: Optional[str] = None
 ) -> logging.Logger:

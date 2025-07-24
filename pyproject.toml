@@ -12,4 +12,7 @@ dependencies = [
     "pydantic-settings",
     "sqlalchemy",
     "psycopg2-binary",
+    "bcrypt",
+    "pyjwt",
+    "generate-password",
 ]
